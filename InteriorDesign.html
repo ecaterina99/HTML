@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #282828;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #831313;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #686868;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #282828;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+a:link {
+  color: rgba(255, 255, 255, 0.648);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(77, 13, 13);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Tricolici Ecaterina Interiors</h2>
+<p>Interior design is the art and science of enhancing the interior spaces of a building to achieve a more aesthetically pleasing and functional environment. It involves the thoughtful selection of colors, materials, furniture, lighting, and decor to reflect the personality, needs, and lifestyle of the occupants. A successful design balances form and function, creating a harmonious flow between elements while considering spatial constraints and practical requirements. Whether transforming a cozy home, a dynamic office, or a luxurious hotel, interior design integrates creativity with technical expertise to craft spaces that inspire, comfort, and elevate the human experience.</p>
+
+<header>
+  <h2>Tricolici Design</h2>
+  <img src="images/LOGO.png" alt="logo" height="100px"> 
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">Modern design</a></li>
+      <li><a href="#">Scandinavian design</a></li>
+      <li><a href="#">Neoclassical design</a></li>
+    </ul>
+    
+<picture>
+    <source srcset="images/0.jpg" media="(max-width: 200px)">
+    <source srcset="images/00.jpg" media="(max-width: 500px)">
+    <source srcset="images/01.jpg">
+    <img src="images/01.jpg" alt="art" style="width:auto;">
+  </picture>
+  </nav>
+  
+  
+  <article>
+    <h1>Modern Design</h1>
+    <p>Modern design style is characterized by its clean lines, minimalism, and focus on functionality. Emerging in the early to mid-20th century, modern design emphasizes simplicity and the beauty of natural materials. It often incorporates open floor plans, neutral color palettes, and uncluttered spaces that create a sense of calm and balance. Key features include the use of sleek furniture, often made from materials like glass, metal, and wood, as well as an emphasis on geometric shapes and asymmetry. Modern design avoids excessive ornamentation, opting instead for purposeful decor that highlights craftsmanship and efficiency. This style celebrates form and function, making it a timeless choice for those who appreciate a sleek and sophisticated aesthetic.
+    </p>
+  </article>
+</section>
+
+<footer>
+  <p>2024</p>
+</footer>
+
+</body>
+</html>
