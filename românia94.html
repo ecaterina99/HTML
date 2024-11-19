@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+            hight: 100vh;
+        }
+        body, main, .echipa, .linie, .jucator{
+            display: flex;
+        }
+        main{
+            background-color: rgb(40, 146, 46);
+            background-image: url('https://www.flashscore.ro/res/_fs/build/symbols.a15cd79.svg#soccerFieldViewDark');
+            width: 80vw;
+            height: 50vw;
+        }
+        .echipa{
+            width: 50%;
+        }
+        .linie{
+        
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 20%;
+        }
+.jucator{
+    background-image: url('https://static.flashscore.com/res/image/data/zH6PuD0r-rmkgmAdj.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-direction: column;
+
+    height: 80px;
+    width: 50px;
+}
+.nume{
+    background-color: black;
+    color: white;
+    position: relative;
+}
+#popescu{
+    background-image: url('https://static.flashscore.com/res/image/data/tKfUkVoM-bD0R8zeH.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.statistica{
+    position: absolute;
+    border-color:white;
+    border-style: solid;
+    width: 10px;
+    height: 10px;
+    background-color:gold;
+    left:0px;
+    top: -20px;
+
+    justify-content: center;
+    align-items: center;
+
+}
+@media screen and (max-width:800px) {
+    main{
+        background-color: black;
+        flex-direction: column;
+    }
+    .echipa{
+        width:100%;
+        flex-direction: column;
+    }
+    .linie{
+        flex-direction: row;
+        width:100%;
+    }
+    #argentina{
+        flex-direction: column-reverse;
+    }
+}
+    </style>
+</head>
+<body>
+    
+<main>
+    <div class="echipa" id="românia">
+<div class="linie">
+    <div class="jucator">
+    <p class="nume">1.Prunea</p>
+</div>
+</div>
+<div class="linie">
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+</div>
+<div class="linie">
+    <div class="jucator" id="popescu">
+        <div class="nume">
+            <div class="statistica"></div>
+             5.Popescu
+    </div>
+</div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+</div>
+<div class="linie">
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+</div>
+<div class="linie">
+    <div class="jucator">
+        <p class="nume">1.Prunea</p>
+    </div>
+</div> 
+    </div>
+
+    <div class="echipa" id="argentina">
+        <div class="linie">
+            <div class="jucator">
+            <p class="nume">1.Prunea</p>
+        </div>
+        </div>
+        <div class="linie">
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+        </div>
+        <div class="linie">
+            <div class="jucator" id="popescu">
+                <div class="nume">
+                    <div class="statistica"></div>
+                     5.Popescu
+            </div>
+        </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+        </div>
+        <div class="linie">
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+            <div class="jucator">
+                <p class="nume">1.Prunea</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
