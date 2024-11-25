@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #inghetata{
+            height:50%;
+            width: 200px;
+            border-top-left-radius:50px;
+            border-top-right-radius:50px;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius:10px;
+            overflow: hidden;
+           background-color: aqua;
+        }
+        #bat{
+            height:30%;
+            width:40px;
+            background-color: saddlebrown;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius:10px;
+            overflow: hidden;
+        }
+        
+@keyframes culori{
+0%{
+    background-color: chocolate
+}
+25%{
+    background-color: bisque
+}
+50%{
+    background-color: lime
+}
+75%{
+    background-color: orangered
+}
+100%{
+    background-color: chocolate
+}
+}
+
+@keyframes culori2{
+0%{
+    background-color: bisque
+}
+25%{
+    background-color: lime
+}
+50%{
+    background-color: orangered
+}
+75%{
+    background-color: chocolate
+}
+100%{
+    background-color: bisque
+}
+
+}
+
+ .aroma{
+        height: 35%;
+        width: 200%;
+        background-color: chocolate;
+        transform:translate(-80px,-35px) rotate(30deg);
+        transition-duration: 1s;
+        animation-name: culori;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    .aroma:nth-child(2){ 
+        background-color: bisque;
+        transition-delay: 2s;
+        animation-name: culori2;
+    }
+
+    .aroma:nth-child(3){
+        background-color: lime;
+        transition-delay: 1s;
+
+    }
+  
+    .aroma:nth-child(4){
+        background-color: orangered;
+        animation-name: culori2;
+    }
+    </style>
+   
+</head>
+<body>
+    <div id="inghetata">
+        <div class="aroma"></div>
+        <div class="aroma"></div>
+        <div class="aroma"></div>
+        <div class="aroma"></div>
+    </div>
+    <div id="bat">
+    </div>
+</body>
+</html>
