@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Net Ninja Pro - the Book</title>
+    <style>
+
+ .fullscreen-bg {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Высота экрана */
+    overflow: hidden;
+}
+
+.fullscreen-bg video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Убирает видео на задний план */
+}
+
+.overlay {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    text-align: left; /* Выравнивание текста слева */
+    color: aliceblue;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+ </style>
+</head>
+<body>
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container  px-3">
+        <img src="pets/logo.png" alt="logo" width="30px" style="margin-right: 15px;">
+        <a href="#" class="navbar-brand">PET HOUSE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#Home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#About Us" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Adopt" class="nav-link">Adopt</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a href="#Happy Tails" class="nav-link">Happy Tails</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#FAQ" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Showcase-->
+<section id="#home" class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+                <div class="fullscreen-bg">
+                    <div class="container  px-3">
+                    <div class="overlay">
+                        <h1 class="display-5 fw-bold" style="margin-bottom: 10px;">ALL WE NEED IS <span class="text-warning">PET</span></h1>
+                        <h2>They want a loving home too.</h2>
+                        <p>
+                            We're working to save the lives of pats around the country.<br>
+                            We can't do it without you.
+                        </p>
+                        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#enroll" style="margin-bottom: 20px;  margin-right: 15px; ">
+                            ADOPT
+                        </button>
+                        <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#enroll" style="margin-bottom: 20px;">
+                            DONATE
+                        </button>
+                    </div>
+                    <video autoplay muted loop playsinline>
+                        <source src="pets/1477894_People_Nature_3840x2160.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+</section>
+                
+
+<!--Boxes-->
+<section class="py-5 bg-dark" id="Adopt" >
+    <div class="container" >
+        <div class="row text-center g-4">
+            <div class="col-md">
+                <div class="card text-light  border-warning border-2" style="background-color: rgb(44, 56, 44);">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-house-heart"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Adopt a dog</h3>
+                        <p class="card-text">
+                            Adopting a dog from a shelter gives them a second chance at a happy life. Many of these dogs have faced hardships and are waiting for someone to care for them. By providing a loving home, you’re offering them the joy and security they deserve while making room in the shelter for another animal in need.                        </p>
+                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card text-light  border-warning border-2" style="background-color: rgba(144, 81, 47, 0.667);">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-house-heart-fill"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Adopt a cat</h3>
+                        <p class="card-text">
+                            Adopting a cat from a shelter can change both your life and theirs forever. These animals often come from difficult circumstances and deserve a second chance at a loving home. Your care and affection can provide them with the happiness and security they’ve been longing for.                        </p>
+                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card text-light  border-warning border-2" style="background-color: rgb(43, 54, 67);">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-box2-heart"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Volunteer</h3>
+                        <p class="card-text">
+                            Volunteering at an animal shelter is a powerful way to make a difference in the lives of animals in need. Your time and care can provide comfort, companionship, and support to pets waiting for their forever homes. Join as a volunteer and become a hero for animals who need you most!
+                        </p>
+                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>  
+        </div>
+    </div>
+</section>
+
+
+<!--About us Section-->
+<section id="About Us" class="p-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+                <img src="pets/10082989.png" class="img-fluid" alt="image2">
+            </div>
+
+            <div class="col-md p-5">
+                <h2 class="text-warning" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">About Us</h2>
+                <p class="lead">
+             Give Love, Save Lives — Adopt, Volunteer, Support!</p>
+         <p>
+            This animal shelter, located in Iași, Romania, has been providing care and hope for homeless pets since its opening in 2019. With over 400 animals currently under its protection, the shelter is dedicated to providing food, medical care, and a safe environment for those in need. Remarkably, it has already helped 1,250 pets find loving homes. The shelter’s mission is to care for and rehabilitate stray animals, giving them a chance at a better life.</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
