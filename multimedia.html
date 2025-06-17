@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Hello HTML!</title>
+</head>
+<body>
+
+<img src="images/0.jpg"alt="Artist"style="width: 20%; height: auto;" >
+<svg version="1.1"
+     baseProfile="full"
+     width="500" height="500"
+     xmlns="http://www.w3.org/2000/svg">
+ 
+ <rect x="10" y="10" width="200" height="100" fill="#4D4D4D" stroke="#4F95FF" stroke-width="3" />
+<rect x="120" y="120" width="100" height="60"/>
+<rect x="200" y="200" rx="10" ry="10" width="100" height="60"/>
+<circle cx="320" cy="320" r="45"/>
+<line x1="10" y1="10" x2="200" y2="10" stroke-width="3" stroke="#FF7F7F"/>
+<body>
+ 
+<canvas id="myCanvas" width="200" height="100""> </canvas>
+
+<rect x="300" y="250" width="60" height="60"></rect>
+ 
+<script>
+ 
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+ 
+</script>
+ 
+</body></svg>
+
+</body>
+</html>
