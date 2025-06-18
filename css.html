@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Hello HTML!</title>
+     <meta charset="UTF-8">
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <style type="text/css">
+            p{
+               color: blue;
+            }
+           div *{
+               color:red;
+            } 
+            #first-div p{
+               color:green;
+            }
+            #first-div + p{
+               color:orange;
+            }
+            p#some-paragraph{
+               color: pink;
+            }
+
+            a[target="_self"]{
+               color: red;
+            }
+
+       </style>
+</head>
+<body>
+
+<p>This is paragraph.</p>
+<p style="color:red;">This is paragraph.</p>
+<p>This is paragraph.</p>
+
+
+<h1>Main Heading</h1>
+<p>Paragraph 0. Not in a div.</p>
+ 
+<div id="first-div" class="content">
+     <h2>Subheading</h2>
+ <p id="some-paragraph">Paragraph 1 in the div.</p>
+ <p>Paragraph 2 in the div.</p>
+ <div id="second-div">
+  <p>Paragraph 3 in the 2nd div.</p>
+ </div>
+</div>
+ 
+<p>Paragraph 4. Not in a div.</p>
+<p>Paragraph 5. Not in a div.</p>
+
+
+<a href="https://www.google.com/"target="_blank">Demo page 1</a>
+<a href="https://www.google.com/"target="_self">Demo page 2</a>
+
+</body>
+</html>
