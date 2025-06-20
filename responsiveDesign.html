@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Relative VS Absolute Units</title>
+ <style type="text/css">
+   
+  div{
+   margin: 0px auto 10px auto;
+   padding: 10px;
+   background-color: #546A79;
+   color: white;
+  }
+ 
+  #div1{ 
+   width: 80%;  
+  }
+ 
+  #div2{
+   width: 80vw;
+   height: 20vh;
+  }
+
+    #div3{
+   width: 500px;
+  }
+
+    @media screen and (max-width: 399px) {
+   p {
+    color: red;
+   }
+  }
+ 
+  @media screen and (max-width: 549px) and (min-width: 400px) {
+   p {
+    color: green;
+   }
+  }
+ 
+ 
+  @media screen and (min-width: 550px) {
+   p {
+    color: blue;
+   }
+  }
+ 
+ </style>
+</head>
+<body>
+ <div id="div1">My dimensions are relative. Yupii! :)</div>
+  <div id="div2">My dimensions are relative too. Yupii! :)</div>
+ <div id="div3">My dimensions are absolute. I am not user friendly! :(</div> 
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur felis. Sed congue lacus neque, et vehicula lectus dictum in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur felis. Sed congue lacus neque, et vehicula lectus dictum in.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur felis. Sed congue lacus neque, et vehicula lectus dictum in.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur felis. Sed congue lacus neque, et vehicula lectus dictum in.</p>
+
+
+</body>
+</html>
