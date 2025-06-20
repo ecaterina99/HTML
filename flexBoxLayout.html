@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+     <html>
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Demo HTML page</title>
+          <style type="text/css">
+#flexbox1 {
+display: flex;
+border: 1px solid black;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+height: 200px;
+align-items:baseline;
+flex-wrap: wrap;
+align-content: space-around;
+
+}
+#flexbox1 > div {
+width: 80px;
+height: 80px;
+margin: 5px;
+}
+ 
+#flexbox1 > div:nth-child(3n+1) {
+background-color: #F0C419;
+font-size: 1em;
+}
+ 
+#flexbox1 > div:nth-child(3n+2) {
+background-color: #4FBA6F;
+font-size: 3em;
+}
+ 
+#flexbox1 > div:nth-child(3n+3) {
+background-color: plum ;
+font-size: 5em;
+          </style>
+
+      </head>
+
+      <body>
+        <div id="flexbox1">
+<div style="flex-basis: 5em">A</div>
+<div style="flex-basis: 10em">B</div>
+<div style="flex-basis: auto">C</div>
+<div style="flex-grow: 1;">A</div>
+<div style="flex-grow: 3;">B</div>
+<div>C</div>
+<div>A</div>
+<div>B</div>
+<div>C</div>
+<div>A</div>
+<div>B</div>
+<div>C</div>
+</div>
+      </body>
+      </html>
