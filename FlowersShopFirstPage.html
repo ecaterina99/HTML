@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flower Shop</title>
+    <style type="text/css">
+
+           header {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+
+        .top-bar {
+      background: #006341;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+        nav {
+      background: #f8f8f8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+        nav .logo {
+            color: purple;
+      font-weight: bold;
+      font-size: 24px;
+      align-items: center;
+    }
+
+        nav .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: #333;
+    }
+
+
+
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      text-align: center;
+      width: 80px;
+    }
+
+     .hero-section {
+  display: flex;
+  height: 800px; /* фиксированная высота, не слишком большая */
+  background-color: black;
+  gap: 1px;
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-left .hero-box {
+  height: 100%;
+}
+
+.hero-right .hero-box {
+  flex: 1;
+}
+
+.hero-box {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.hero-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  color: black;
+  padding: 15px 20px;
+  background-color: white;
+}
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="top-bar">Home delivery available in Romania | Free returns</div>
+    <nav>
+      <div class="logo">Peony Bloom</div>
+      <div class="menu">
+        <a href="#">Bouquets</a>
+        <a href="#">Plants</a>
+        <a href="#">Gifts</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+
+
+    <main>
+    <section class="categories">
+      <div class="category">
+        <div>Bouquets</div>
+      </div>
+      <div class="category">
+        <div>Plants</div>
+      </div>
+      <div class="category">
+        <div>Gifts</div>
+      </div>
+  <div class="category">
+        <div>Contact</div>
+      </div>
+
+    </section>
+
+  <section class="hero-section">
+  <div class="hero-left">
+    <div class="hero-box">
+      <img src="innerFolder/01.jpg" alt="Let it bloom">
+      <div class="overlay-text">Let it bloom</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-box">
+      <img src="innerFolder/02.jpg" alt="Plants">
+      <div class="overlay-text">Plants</div>
+    </div>
+    <div class="hero-box">
+      <img src="innerFolder/03.jpg" alt="Gifts">
+      <div class="overlay-text">Gifts</div>
+    </div>
+  </div>
+</section>
+  </main>
+
+
+
+</body>
+</html>
