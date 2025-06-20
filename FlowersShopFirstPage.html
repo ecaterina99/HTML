@@ -5,197 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flower Shop</title>
     <style type="text/css">
+        @font-face {
+            font-family: 'Agraham';
+            src: url('innerFolder/agraham.personal-use.otf') format('opentype');
+        }
 
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
 
         .top-bar {
-      background: black;
-      color: white;
-      text-align: center;
-      padding: 8px;
-      font-size: 14px;
-    }
-         .logo {
+            display: flex;
+            background: black;
+            align-items: center;
+            color: white;
+            text-align: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            font-size: 14px;
+            position: relative;
+
+        }
+
+        .delivery {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .user {
+            margin-left: auto;
+        }
+
+        .logo {
             color: black;
-      font-weight: bold;
-      font-style: italic;
-      font-size: 30px;
-      text-align: center;
+            font-size: 50px;
+            font-family: 'Agraham';
+            text-align: center;
             background-color: whitesmoke;
-                  padding: 25px;
-    }
+            padding: 1px;
+        }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background-color: darkslategray;
+        }
 
+        .category {
+            text-align: center;
+            width: 80px;
+        }
 
-        .categories {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      background-color: darkslategray;
-     }
+        a {
+            color: white;
+            text-decoration: none;
+        }
 
-    .category {
-      text-align: center;
-      width: 80px;
-    }
+        a:hover {
+            color: lightsalmon;
+        }
 
+        .hero-section {
+            display: flex;
+            height: 800px;
+            position: relative;
+        }
 
+        .hero-left,
+        .hero-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .hero-left .hero-box {
+            height: 100%;
+        }
 
-     .hero-section {
-  display: flex;
-  height: 900px; 
-  box-sizing: border-box;
-}
+        .hero-right .hero-box {
+            flex: 1;
+        }
 
-.hero-left,
-.hero-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+        .hero-box {
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+        }
 
-.hero-left .hero-box {
-  height: 100%;
-}
+        .hero-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .bloom-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Agraham';
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 40px;
+            z-index: 2;
+            pointer-events: none;
+            white-space: nowrap;
+        }
 
-.hero-right .hero-box {
-  flex: 1;
-}
+        .btn {
+            position: absolute;
+            bottom: 5%;
+            left: 40%;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease,
+            transform 0.3s ease;
+        }
 
-.hero-box {
-  position: relative;
-  overflow: hidden;
-  background-color: black;
-}
+        .btn:hover {
+            background-color: #a020f0;
+            transform: scale(1.2);
+        }
+        
+        .about-us {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-.hero-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+        .about-header {
+            font-size: 30px;
+            font-weight: bold;
+        }
 
-.overlay-text {
-  position: absolute;
-  bottom: 5%;
-  left: 40%;
-  color: whitesmoke;
-  padding: 15px 50px;
-  background: rgba(255,255,255,0.2);
-}
-.bloom-text{
-  position: absolute;
-  bottom: 30%;
-  left: 38%;
-  color:rgba(255,255,255,0.2);
-  font-size: 90px;
-  font-style: italic;
+        .about-text {
+            width: 50%;
+            text-align: center;
+            font-size: 14px;
+            font-style: italic;
+            line-height: 2em;
+        }
 
-}
-
-.about-us{
-    padding: 40px;
-    align-content: center;
-         display: flex;
-      justify-content: center;
-        flex-direction: column;
-          align-items: center;
-}
-
-.about-header{
-      text-align: center;
-      font-size: 30px;
-      font-weight: bold;
-      font-style: italic;
-}
-.about-text{
-    width: 50%;
-      text-align: center;
-      font-size: 14px;
-      font-style: italic;
-      line-height:2em;
-}
-
-.footer{
-  background-color: black;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  font-size: 14px;
-}
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
 
     </style>
-
 </head>
-
 
 <body>
 
-  <header>
-    <div class="top-bar">Home delivery available in Romania | Free returns</div>
-      <div class="logo">Peony Bloom</div>
-  </header>
+<header>
+    <div class="top-bar">
+        <div class="delivery">Home delivery available in Romania | Free returns</div>
+        <div class="user">
+            <a href="gifts.html"> Log in | Register</a>
+        </div>
+    </div>
+    <div class="logo">Peony Bloom</div>
+</header>
 
 <main>
     <nav>
-    <section class="categories">
-      <div class="category">
- <a href="#">Bouquets</a>
-       </div>
-      <div class="category">
-        <a href="#">Plants</a>
-      </div>
-      <div class="category">
-        <a href="#">Gifts</a>
-      </div>
-  <div class="category">
-        <a href="#">Contact</a>
-      </div>
-  </section>
+        <div class="category">
+            <a href="bouquets.html">Bouquets</a>
+        </div>
+        <div class="category">
+            <a href="plants.html">Plants</a>
+        </div>
+        <div class="category">
+            <a href="gifts.html">Gifts</a>
+        </div>
+        <div class="category">
+            <a href="#">Contact</a>
+        </div>
     </nav>
 
-  <section class="hero-section">
-  <div class="hero-left">
-    <div class="hero-box">
-      <img src="innerFolder/00.png" alt="Let it bloom">
-      <div class="overlay-text">Bouquets</div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-box">
-      <img src="innerFolder/02.jpg" alt="Plants">
-      <div class="overlay-text">Plants</div>
-    </div>
-    <div class="hero-box">
-      <img src="innerFolder/03.jpg" alt="Gifts">
-      <div class="overlay-text">Gifts</div>
-    </div>
-          <div class="bloom-text">Let it bloom</div>
+    <section class="hero-section">
+        <div class="hero-left">
+            <div class="hero-box">
+                <img src="innerFolder/00.png" alt="Bouquets">
+                <a href="bouquets.html">
+                    <button class="btn">Bouquets</button>
+                </a>
+            </div>
+        </div>
 
-  </div>
-</section>
-
-
-<section class="about-us">
-    <div class="about-header">
-        <h1>About us<h1>
+        <div class="hero-right">
+            <div class="hero-box">
+                <img src="innerFolder/02.jpg" alt="Plants">
+                <a href="plants.html">
+                    <button class="btn">Plants</button>
+                </a>
+            </div>
+            <div class="hero-box">
+                <img src="innerFolder/03.jpg" alt="Gifts">
+                <a href="gifts.html">
+                    <button class="btn">Gifts</button>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="bloom-text">Let it bloom</div>
+    </section>
+    
+    <section class="about-us">
+        <div class="about-header">
+            <h1>About us</h1>
         </div>
         <div class="about-text">
-<p>Whether you’re treating someone special or bringing extra cheer to your home, browse the M&S flowers and plants collection for inspiration. You’ll find bouquets of seasonal blooms to mark milestone occasions, alongside top-quality indoor plants that make a thoughtful present for green-fingered recipients. Create your own gift bundle
-Select your bouquet or plant then choose chocolates, wine, fizz or a candle to add to your gift.<p>
-    </div>
-
+            <p>Whether you’re treating someone special or bringing extra cheer to your home, browse the M&S flowers and
+                plants collection for inspiration. You’ll find bouquets of seasonal blooms to mark milestone occasions,
+                alongside top-quality indoor plants that make a thoughtful present for green-fingered recipients. Create
+                your own gift bundle
+                Select your bouquet or plant then choose chocolates, wine, fizz or a candle to add to your gift.
+            <p>
+        </div>
+    </section>
     
-</section>
-
-  </main>
-
+</main>
 
 <footer class="footer">
-   Copyright © PEONY GROUP
+    Copyright © PEONY GROUP
 </footer>
-
 
 </body>
 </html>
