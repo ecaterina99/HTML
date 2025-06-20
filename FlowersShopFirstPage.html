@@ -6,74 +6,45 @@
     <title>Flower Shop</title>
     <style type="text/css">
 
-           header {
-      background: #000;
-      color: #fff;
-      padding: 10px 20px;
-    }
-
 
         .top-bar {
-      background: #006341;
+      background: black;
       color: white;
       text-align: center;
       padding: 8px;
       font-size: 14px;
     }
-
-        body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-        nav {
-      background: #f8f8f8;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ddd;
-    }
-
-        nav .logo {
-            color: purple;
+         .logo {
+            color: black;
       font-weight: bold;
-      font-size: 24px;
-      align-items: center;
-    }
-
-        nav .menu {
-      display: flex;
-      gap: 15px;
-    }
-
-    nav .menu a {
-      text-decoration: none;
-      color: #333;
+      font-style: italic;
+      font-size: 30px;
+      text-align: center;
+            background-color: whitesmoke;
+                  padding: 25px;
     }
 
 
 
-
-    .categories {
+        .categories {
       display: flex;
       justify-content: center;
       gap: 20px;
       padding: 20px;
-      flex-wrap: wrap;
-    }
+      background-color: darkslategray;
+     }
 
     .category {
       text-align: center;
       width: 80px;
     }
 
+
+
+
      .hero-section {
   display: flex;
-  height: 800px; /* фиксированная высота, не слишком большая */
-  background-color: black;
-  gap: 1px;
-  padding: 1px;
+  height: 900px; 
   box-sizing: border-box;
 }
 
@@ -109,56 +80,86 @@
   position: absolute;
   bottom: 5%;
   left: 40%;
-  color: black;
-  padding: 15px 20px;
-  background-color: white;
+  color: whitesmoke;
+  padding: 15px 50px;
+  background: rgba(255,255,255,0.2);
+}
+.bloom-text{
+  position: absolute;
+  bottom: 30%;
+  left: 38%;
+  color:rgba(255,255,255,0.2);
+  font-size: 90px;
+  font-style: italic;
+
 }
 
+.about-us{
+    padding: 40px;
+    align-content: center;
+         display: flex;
+      justify-content: center;
+        flex-direction: column;
+          align-items: center;
+}
 
+.about-header{
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      font-style: italic;
+}
+.about-text{
+    width: 50%;
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      line-height:2em;
+}
+
+.footer{
+  background-color: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 14px;
+}
 
     </style>
 
 </head>
 
+
 <body>
 
   <header>
     <div class="top-bar">Home delivery available in Romania | Free returns</div>
-    <nav>
       <div class="logo">Peony Bloom</div>
-      <div class="menu">
-        <a href="#">Bouquets</a>
-        <a href="#">Plants</a>
-        <a href="#">Gifts</a>
-        <a href="#">Contact</a>
-      </div>
-    </nav>
   </header>
 
-
-
-    <main>
+<main>
+    <nav>
     <section class="categories">
       <div class="category">
-        <div>Bouquets</div>
+ <a href="#">Bouquets</a>
+       </div>
+      <div class="category">
+        <a href="#">Plants</a>
       </div>
       <div class="category">
-        <div>Plants</div>
-      </div>
-      <div class="category">
-        <div>Gifts</div>
+        <a href="#">Gifts</a>
       </div>
   <div class="category">
-        <div>Contact</div>
+        <a href="#">Contact</a>
       </div>
-
-    </section>
+  </section>
+    </nav>
 
   <section class="hero-section">
   <div class="hero-left">
     <div class="hero-box">
-      <img src="innerFolder/01.jpg" alt="Let it bloom">
-      <div class="overlay-text">Let it bloom</div>
+      <img src="innerFolder/00.png" alt="Let it bloom">
+      <div class="overlay-text">Bouquets</div>
     </div>
   </div>
   <div class="hero-right">
@@ -170,10 +171,30 @@
       <img src="innerFolder/03.jpg" alt="Gifts">
       <div class="overlay-text">Gifts</div>
     </div>
+          <div class="bloom-text">Let it bloom</div>
+
   </div>
 </section>
+
+
+<section class="about-us">
+    <div class="about-header">
+        <h1>About us<h1>
+        </div>
+        <div class="about-text">
+<p>Whether you’re treating someone special or bringing extra cheer to your home, browse the M&S flowers and plants collection for inspiration. You’ll find bouquets of seasonal blooms to mark milestone occasions, alongside top-quality indoor plants that make a thoughtful present for green-fingered recipients. Create your own gift bundle
+Select your bouquet or plant then choose chocolates, wine, fizz or a candle to add to your gift.<p>
+    </div>
+
+    
+</section>
+
   </main>
 
+
+<footer class="footer">
+   Copyright © PEONY GROUP
+</footer>
 
 
 </body>
