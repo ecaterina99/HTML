@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gifts</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Agraham';
+            src: url('innerFolder/agraham.personal-use.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .top-bar {
+            display: flex;
+            background: black;
+            align-items: center;
+            color: white;
+            text-align: center;
+            justify-content: space-around;
+            padding: 8px 20px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .delivery {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .user {
+            margin-left: auto;
+        }
+
+        .logo {
+            color: black;
+            font-size: 50px;
+            font-family: 'Agraham';
+            text-align: center;
+            padding: 1px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            background-color: darkslategray;
+        }
+
+        .category {
+            text-align: center;
+            width: 80px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: lightsalmon;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+                        margin-right: 50px;
+                        margin-top: 50px;
+
+        }
+
+        h1 {
+            font-size: 20;
+        }
+
+        .intro-text {
+            font-size: 16;
+            font-style: italic;
+            line-height: 2em;
+        }
+        
+        .gifts-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            align-items: center;
+            text-align: center;
+
+        }
+        
+        .gift-form {
+            display: flex;
+            flex-direction: column;
+            background-color: gray;
+            align-items: center;
+            text-align: center;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+        
+        .gift-form img {
+            width: 300px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease,
+            transform 0.3s ease;
+            margin-bottom: 20px;
+            padding: 12px 30px;
+        }
+
+        .btn:hover {
+            background-color: #a020f0;
+            transform: scale(1.2);
+        }
+        
+        h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            line-height: 2em;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="top-bar">
+        <div class="delivery">Home delivery available in Romania | Free returns</div>
+        <div class="user">
+            <a href="login.html"> Log in | Register</a>
+        </div>
+    </div>
+    <div class="logo">Peony Bloom</div>
+</header>
+<main>
+    <nav>
+        <div class="category">
+            <a href="FlowersShopFirstPage.html">About us</a>
+        </div>
+        <div class="category">
+            <a href="bouquets.html">Bouquets</a>
+        </div>
+        <div class="category">
+            <a href="plants.html">Plants</a>
+        </div>
+        <div class="category">
+            <a href="gifts.html">Gifts</a>
+        </div>
+        <div class="category">
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="intro">
+        <h1>Gifts</h1>
+        <div class="intro-text">
+From milestone celebrations to tokens of appreciation, our selection of gifts is ideal for special moments. Whether you're marking a birthday, anniversary, or simply sharing a thoughtful gesture, we have something for every occasion. Pick from our carefully curated assortment of designs to say thank you in person or from afar. Let your gift speak from the heart.
+        </div>
+    </div>
+    
+    <section class="gifts-section">
+        <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/1.avif" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>Green vase</h3>
+                <h3>40$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+
+       <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/2.avif" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>Scented Candle</h3>
+                <h3>24$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+
+           <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/3.avif" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>Vanilla Scented Candle</h3>
+                <h3>19$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/4.avif" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>Alain Ducasse Chocolate</h3>
+                <h3>16$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gifts-section">
+        <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/6.jpg" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>MOËT & CHANDON</h3>
+                <h3>100$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+
+     <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/7.jpg" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>MOËT & CHANDON ROSÉ</h3>
+                <h3>100$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+
+           <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/8.jpg" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>"The kiss"</h3>
+                <h3>30$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+        
+        <div class="gift-form">
+            <div class="img">
+                <img src="innerFolder/gifts/9.jpg" alt="Gifts">
+            </div>
+            <div class="price">
+                <h3>10 pink heart balloons</h3>
+                <h3>50$</h3>
+            </div>
+            <div>
+                <a href="orderForm.html">
+                    <button class="btn">ORDER</button>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    Copyright © PEONY GROUP
+</footer>
+
+</body>
+</html>
