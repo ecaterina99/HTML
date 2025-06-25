@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plants</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product-page-style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="delivery">Home delivery available in Romania | Free returns</div>
+        <div class="user">
+            <a href="login.html"> Log in | Register</a>
+        </div>
+    </div>
+    <div class="logo">Peony Bloom</div>
+</header>
+
+<main>
+    <nav>
+        <div class="category">
+            <a href="1mainPage.html">About us</a>
+        </div>
+        <div class="category">
+            <a href="bouquets.html">Bouquets</a>
+        </div>
+        <div class="category">
+            <a href="plants.html">Plants</a>
+        </div>
+        <div class="category">
+            <a href="gifts.html">Gifts</a>
+        </div>
+        <div class="category">
+            <a href="contactForm.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="intro">
+        <h1 class="titlePage">Plants</h1>
+        <div class="intro-text">
+            Want to Buy Houseplants Online with Confidence?
+            Whether you're after rare houseplants, easy-care greenery, or pet-safe indoor plants, you'll find them all
+            at Foliage Factory.<br>
+            From beginner-friendly favorites to collector’s gems, we’ve got something for every space and skill
+            level.<br>
+            Expert care tips included – so your plants thrive, not just survive.<br>
+            We make buying houseplants online simple, safe, and rewarding.
+        </div>
+    </div>
+
+    <section class="products-section">
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/8.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Eucalyptus Dario</h3>
+                <h3>50$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/7.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Olivier Luciano</h3>
+                <h3>70$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/1.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Medinilla Linda</h3>
+                <h3>38$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/2.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Green Avalanche</h3>
+                <h3>28$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/3.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Schefflera Etna</h3>
+                <h3>35$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/4.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Cactus Gus</h3>
+                <h3>25$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/5.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Olivier Milo</h3>
+                <h3>40$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+        <div class="product-form">
+            <div class="img">
+                <img src="innerFolder/plants/6.avif" alt="Plants">
+            </div>
+            <div class="price">
+                <h3>Eucalyptus Dario</h3>
+                <h3>45$</h3>
+            </div>
+            <div>
+                <button class="btn" onclick="openPopup()">ORDER</button>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<div id="popupOverlay" class="overlay">
+    <div class="popup">
+        <h2>Great choice!</h2>
+        <h3>The item was added to the cart</h3>
+        <button class="close-btn" onclick="closePopup()">close</button>
+    </div>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('popupOverlay').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+</script>
+
+<footer class="footer">
+    Copyright © PEONY GROUP
+</footer>
+
+</body>
+</html>
