@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello JS</title>
+</head>
+
+<body>
+ <script type="text/javascript">
+
+ 
+function calculateRectArea(a, b){
+    var result=a*b;
+ return result;
+}
+
+var area=calculateRectArea(5,10);
+console.log("Area is: "+area);
+
+
+
+//functie anonima
+function doSomeStuff(a, b){
+ 
+ if(a == 13){
+  b(a);
+ }
+ 
+}
+ 
+doSomeStuff(13, function(num){
+ console.log(num + " is not allowed!");
+});
+
+//functie de autoapelare
+(function () {
+    console.log("Hello from self-invoking function");
+})();
+
+//function scope
+var x = 4;
+function myFunction() {
+ console.log(x)
+}
+myFunction();
+
+//functie in cadrul functiei
+
+function subtractSquares(a,b) {
+ function square(x) {
+  return x * x;
+ }
+ return square(a) - square(b);
+}
+ 
+console.log(subtractSquares(6,3));
+
+//Closure
+function iterate() {
+ 
+ var counter = 0;
+ 
+ function increment() {
+  return counter++;
+ }
+ 
+ return increment;
+}
+var incrementFromOutside = iterate();
+ 
+console.log(incrementFromOutside());
+console.log(incrementFromOutside());
+console.log(incrementFromOutside());
+
+
+
+var h = 4; 
+function myFunction() { 
+    console.log(h) } 
+    myFunction();
+
+</script>
+</body>
+</html>
