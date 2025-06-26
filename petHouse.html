@@ -1,581 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Pet House</title>
     <style>
         html {
-    scroll-behavior: smooth;
-}
+            scroll-behavior: smooth;
+        }
 
- .fullscreen-bg {
-    position: relative;
-    width: 100%;
-    height: 70vh; 
-    overflow: hidden;
-}
+        .fullscreen-bg {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
 
-.fullscreen-bg video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; 
-}
+        .fullscreen-bg video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
 
-.overlay {
-    position: absolute;
-    top: 30%;
-    z-index: 1;
-    text-align: left; 
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-}
+        .overlay {
+            position: absolute;
+            top: 30%;
+            z-index: 1;
+            text-align: left;
+            color: aliceblue;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+        }
 
-.btn:hover{
-    transform:scale(1.1)
-}
+        .btn:hover {
+            transform: scale(1.1)
+        }
 
-.title{
-       text-align: center; margin-bottom: 10px;
-    }
-    
-.Happy{
-        height: 60vh;
-        display:flex;
-        align-items:center;
-        justify-content: center;
-    }
-   
-    .tails{
-        width: 100%;
-        height: 100%;
-        display:flex;
-        align-items:center;
-        justify-content:space-evenly;
-    }
+        .title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-    .animals{
-height: 80%;
-width: 18%;
-margin: 10px;
-transition-duration: 1s;
-border-radius: 10px;
-background-size: cover;
-background-position: top;
-display: flex;
-justify-content: center;
-color: antiquewhite;
-position: relative;
-overflow: hidden;
+        .Happy {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    }
-    .name {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out;
-}
-    .animals:hover .name {
-    opacity: 1;
-}
+        .tails {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
 
-.animals:hover {
-    width: 40%;
-    transition-duration: 1s;
-}
-    .animals:nth-child(1){
-        background-image:url(pets/1.png);
-    }
-    .animals:nth-child(2){
-        background-image:url(pets/2.jpg);
-    }
-    .animals:nth-child(3){
-        background-image:url(pets/3.jpg);
-    }
-    .animals:nth-child(4){
-        background-image:url(pets/4.jpg);
-    }
-    .animals:nth-child(5){
-        background-image:url(pets/5.jpg);
-    }
+        .animals {
+            height: 80%;
+            width: 18%;
+            margin: 10px;
+            transition-duration: 1s;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: top;
+            display: flex;
+            justify-content: center;
+            color: antiquewhite;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .name {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .animals:hover .name {
+            opacity: 1;
+        }
+
+        .animals:hover {
+            width: 40%;
+            transition-duration: 1s;
+        }
+
+        .animals:nth-child(1) {
+            background-image: url(pets/1.png);
+        }
+
+        .animals:nth-child(2) {
+            background-image: url(pets/2.jpg);
+        }
+
+        .animals:nth-child(3) {
+            background-image: url(pets/3.jpg);
+        }
+
+        .animals:nth-child(4) {
+            background-image: url(pets/4.jpg);
+        }
+
+        .animals:nth-child(5) {
+            background-image: url(pets/5.jpg);
+        }
 
 
-    @media (max-width: 768px) {
-.tails{
-flex-direction: column;
-}
-    .animals {
-        width: 70%; /* Уменьшаем ширину элементов, чтобы они не занимали всю ширину */
-        margin-bottom: 10px; /* Добавляем отступы между элементами */
-    
-    }
-    .name {
-        padding: 15px;
-        font-size: 1rem;
-    }
+        @media (max-width: 768px) {
+            .tails {
+                flex-direction: column;
+            }
 
-    .animals:hover {
-        height: 500%;
-    width: 100%;
-    transition-duration: 1s;
-}
-}
- </style>
+            .animals {
+                width: 70%;
+                /* Уменьшаем ширину элементов, чтобы они не занимали всю ширину */
+                margin-bottom: 10px;
+                /* Добавляем отступы между элементами */
+
+            }
+
+            .name {
+                padding: 15px;
+                font-size: 1rem;
+            }
+
+            .animals:hover {
+                height: 500%;
+                width: 100%;
+                transition-duration: 1s;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-    <div class="container  px-3">
-        <img src="pets/logo.png" alt="logo" width="30px" style="margin-right: 15px;">
-        <a href="#" class="navbar-brand">PET HOUSE</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container  px-3">
+            <img src="pets/logo.png" alt="logo" width="30px" style="margin-right: 15px;">
+            <a href="#" class="navbar-brand">PET HOUSE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="#Home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Adopt" class="nav-link">Adopt</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#About-Us" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Happy-Tails" class="nav-link">Happy Tails</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#FAQ" class="nav-link">FAQs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#Home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Adopt" class="nav-link">Adopt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#About-Us" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Happy-Tails" class="nav-link">Happy Tails</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#FAQ" class="nav-link">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!--Showcase-->
-<section id="Home" class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
-                <div class="fullscreen-bg">
-                    <div class="container px-3">
-                    <div class="overlay">
-                        <h1 class="display-5 fw-bold" style="margin-bottom: 10px;">ALL WE NEED IS <span class="text-warning">PET</span></h1>
-                        <h2>They want a loving home too.</h2>
-                        <p>
-                            We're working to save the lives of pats around the country.<br>
-                            We can't do it without you.
-                        </p>
-                        <a href="#Adopt"><button class="btn btn-warning btn-lg" style="margin-bottom: 20px;  margin-right: 15px; ">
+    <!--Showcase-->
+    <section id="Home" class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+        <div class="fullscreen-bg">
+            <div class="container px-3">
+                <div class="overlay">
+                    <h1 class="display-5 fw-bold" style="margin-bottom: 10px;">ALL WE NEED IS <span
+                            class="text-warning">PET</span></h1>
+                    <h2>They want a loving home too.</h2>
+                    <p>
+                        We're working to save the lives of pats around the country.<br>
+                        We can't do it without you.
+                    </p>
+                    <a href="#Adopt"><button class="btn btn-warning btn-lg"
+                            style="margin-bottom: 20px;  margin-right: 15px; ">
                             ADOPT
                         </button>
                     </a>
-                        <a href="#Adopt">
+                    <a href="#Adopt">
                         <button class="btn btn-warning btn-lg" style="margin-bottom: 20px;">
                             DONATE
                         </button>
                     </a>
-                    </div>
-                    <video autoplay muted loop playsinline>
-                        <source src="pets/1477894_People_Nature_3840x2160.mp4" type="video/mp4">
-                    </video>
                 </div>
-            </div>
-</section>
-                
-
-<!--Boxes-->
-<section class="py-5 bg-dark" id="Adopt" >
-    <div class="container  px-3" >
-        <div class="row text-center g-4">
-            <div class="col-md">
-                <div class="card text-light  border-warning border-2" style="background-color: rgb(35, 52, 38);">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-house-heart"></i>
-                        </div>
-                        <h3 class="card-title mb-3">Adopt a dog</h3>
-                        <p class="card-text">
-                        Adopting a dog from a shelter gives them a second chance at happiness. Many of these dogs have faced hardships and await someone to care for them. By providing a loving home, you offer them the joy and security they deserve while making room for another animal in need.</p>
-                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
-                    </div>
-                </div>
-            </div>
-      
-            <div class="col-md">
-                <div class="card text-light  border-warning border-2" style="background-color: rgba(144, 81, 47, 0.667);">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-house-heart-fill"></i>
-                        </div>
-                        <h3 class="card-title mb-3">Adopt a cat</h3>
-                        <p class="card-text">
-                            Adopting a cat from a shelter can change both your life and theirs forever. These animals often come from difficult circumstances and deserve a second chance at a loving home. Your care and affection can provide them with the happiness and security they’ve been longing for.                        </p>
-                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="card text-light  border-warning border-2" style="background-color: rgb(43, 54, 67);">
-                    <div class="card-body text-center">
-                        <div class="h1 mb-3">
-                            <i class="bi bi-box2-heart"></i>
-                        </div>
-                        <h3 class="card-title mb-3">Volunteer</h3>
-                        <p class="card-text">
-                            Volunteering at an animal shelter is a powerful way to make a difference in the lives of animals in need. Your time and care can provide comfort, companionship, and support to pets waiting for their forever homes. Join as a volunteer and become a hero for animals who need you most!
-                        </p>
-                        <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
-                    </div>
-                </div>
-            </div>
-                    </div>
-                </div>  
-        </div>
-    </div>
-</section>
-
-
-<!--About us Section-->
-<section id="About-Us" class="p-5" style="background-color: rgba(249, 213, 158, 0.9);">
-    <div class="container">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-md">
-                <img src="pets/10082989.png" class="img-fluid" alt="image2">
-            </div>
-            <div class="col-md p-5">
-                <h2 class="display-6 fw-bold text-warning"  style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">About Us</h2>
-                <p class="lead">
-             Give Love, Save Lives — Adopt, Volunteer, Support!</p>
-         <p>
-            This animal shelter, located in Iași, Romania, has been providing care and hope for homeless pets since its opening in 2019. With over 400 animals currently under its protection, the shelter is dedicated to providing food, medical care, and a safe environment for those in need. Remarkably, it has already helped 1,250 pets find loving homes. The shelter’s mission is to care for and rehabilitate stray animals, giving them a chance at a better life.</p>
-        </div>
-        </div>
-    </div>
-</section>
-
-<!--Happy Tails-->
-
-<section id="Happy-Tails" class="p-5 bg-dark">
-    <div class="container px-3">
-<div class="title">
-    <div class="title bg-dark "> 
-        <h2 class="display-6 fw-bold text-warning"  style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">Happy Tails</h2>
-    <p class="lead text-center text-white m-5">Many families have opened their hearts to shelter animals, giving them a chance at a better life. These pets, once homeless, now thrive in loving homes, bringing joy and companionship to their new families. The families are overjoyed to have made a difference, knowing they saved not just lives but also gained loyal friends for life.
-    </p>
-    </div>
-</div>
-<div class="Happy">
-    <div class="tails">
-        <div class="animals bg-warning ">
-            <div class="name text-center">
-                <h3>Rex</h3>
-                <p>When Rex first arrived at his new home, he timidly explored every corner, but within a week, his tail never stopped wagging. Now he’s the family’s protector, children’s best friend, and a loyal companion on every walk.</p>
+                <video autoplay muted loop playsinline>
+                    <source src="pets/1477894_People_Nature_3840x2160.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-        <div class="animals bg-warning">
-            <div class="name text-center">
-                <h3>Pufarina</h3>
-            <p>Tiny Pufurina, once scared and skinny, quickly blossomed into the fluffy queen of the house. Every morning, she greets her owners with gentle purring, a daily reminder of the magic of love.</p>
-            </div>
-        </div>
-        <div class="animals bg-warning">
-            <div class="name  text-center"><h3>Tom & Layla</h3>
-                <p>Layla and Tom became friends at the shelter and were adopted together. Now inseparable, the dog guards the home while the cat warms the family with cozy purrs on the couch.</p>
-            </div>
-        </div>
-        <div class="animals bg-warning">
-            <div class="name  text-center"><h3>Reno</h3>
-                <p>Reno joined a young couple and instantly became their best friend. His playful personality and funny jumps filled their home with laughter and joy.</p>
-            </div>
-        </div>
-        <div class="animals bg-warning">
-            <div class="name text-center"><h3>Pupic</h3>
-                <p>Little Pupic, rescued from the streets, transformed into a lively comedian in his new home. He brightens every day with joyful leaps on walks and his ability to turn anything into a game.</p>
-            </div>
-        </div>
-            </div>
-        </div>
-    </div>
     </section>
 
-<!-- FAQ Section -->
-<section id="FAQ" class="p-5" style="background-color: rgba(249, 213, 158, 0.9);">
-    <div class="container">
-        <h2 class="display-6 fw-bold text-warning text-center mb-5" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">FAQs</h2>
-        <div class="accordion accordion-flush" id="FAQ">
-            <!-- Question 1 -->
-            <div class="accordion-item" style="background-color: transparent;">
-                <h2 class="accordion-header" id="question-one">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-1" aria-expanded="true" aria-controls="question-1" style="background-color: transparent; border:1px; font-weight: bold;">
-                        How Can I Adopt a Pet?
-                    </button>
-                </h2>
-                <div id="question-1" class="accordion-collapse collapse" aria-labelledby="question-one" data-bs-parent="#FAQ">
-                    <div class="accordion-body">
-                        <p>To adopt a pet you see listed on Pet House, please click the "Adopt" button or the "Contact this Organization" button on the pet's profile. You will then be given the group's contact information and, if an email is available for that group, you will be able to email that group using our form.</p>
+
+    <!--Boxes-->
+    <section class="py-5 bg-dark" id="Adopt">
+        <div class="container  px-3">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card text-light  border-warning border-2" style="background-color: rgb(35, 52, 38);">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-house-heart"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Adopt a dog</h3>
+                            <p class="card-text">
+                                Adopting a dog from a shelter gives them a second chance at happiness. Many of these
+                                dogs have faced hardships and await someone to care for them. By providing a loving
+                                home, you offer them the joy and security they deserve while making room for another
+                                animal in need.</p>
+                            <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Question 2 -->
-            <div class="accordion-item" style="background-color: transparent;">
-                <h2 class="accordion-header" id="question-two">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-2" aria-expanded="true" aria-controls="question-2" style="background-color: transparent; border:1px; font-weight: bold;">
-                        How is the work of Pet House funded?
-                    </button>
-                </h2>
-                <div id="question-2" class="accordion-collapse collapse" aria-labelledby="question-two" data-bs-parent="#FAQ">
-                    <div class="accordion-body">
-                        <p>Pet House Animal Society is funded mostly by the donations of members and well-wishers. We also receive some funding from foundations and businesses. Donations to Pet House are tax-deductible. Our accounts are fully audited.</p>
+                <div class="col-md">
+                    <div class="card text-light  border-warning border-2"
+                        style="background-color: rgba(144, 81, 47, 0.667);">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-house-heart-fill"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Adopt a cat</h3>
+                            <p class="card-text">
+                                Adopting a cat from a shelter can change both your life and theirs forever. These
+                                animals often come from difficult circumstances and deserve a second chance at a loving
+                                home. Your care and affection can provide them with the happiness and security they’ve
+                                been longing for. </p>
+                            <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="accordion-item" style="background-color: transparent;">
-                <h2 class="accordion-header" id="question-three">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-3" aria-expanded="true" aria-controls="question-3" style="background-color: transparent; border:1px; font-weight: bold;">
-                        Where do the animals come from?
-                    </button>
-                </h2>
-                <div id="question-3" class="accordion-collapse collapse" aria-labelledby="question-three" data-bs-parent="#FAQ">
-                    <div class="accordion-body">
-                        <p>Most of the animals come from Pet House Network partners, which are located all around the country.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="accordion-item" style="background-color: transparent;">
-                <h2 class="accordion-header" id="question-four">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-4" aria-expanded="true" aria-controls="question-4" style="background-color: transparent; border:1px; font-weight: bold;">
-                        Where is the Pet House?
-                    </button>
-                </h2>
-                <div id="question-4" class="accordion-collapse collapse" aria-labelledby="question-four" data-bs-parent="#FAQ">
-                    <div class="accordion-body">
-                        <p>The animal shelter Pet House is located in Iași, Romania. It has been providing care and hope for homeless pets since its opening in 2019.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="accordion-item" style="background-color: transparent;">
-                <h2 class="accordion-header" id="question-five">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question-5" aria-expanded="true" aria-controls="question-5" style="background-color: transparent; border:1px; font-weight: bold;">
-                        How we use the money you donate us?
-                    </button>
-                </h2>
-                <div id="question-5" class="accordion-collapse collapse" aria-labelledby="question-five" data-bs-parent="#FAQ">
-                    <div class="accordion-body">
-                        <p>We couldn't fund our life-saving work for animals without you. More than 80 percent of your donation will go to rescuing and caring for vulnerable animals, then rehoming or releasing them. The next 18 percent of your donation goes towards fundraising. The remaining 2 percent goes towards governance. Your generous donation helps us fight animal cruelty—thank you.</p>
+                <div class="col-md">
+                    <div class="card text-light  border-warning border-2" style="background-color: rgb(43, 54, 67);">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-box2-heart"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Volunteer</h3>
+                            <p class="card-text">
+                                Volunteering at an animal shelter is a powerful way to make a difference in the lives of
+                                animals in need. Your time and care can provide comfort, companionship, and support to
+                                pets waiting for their forever homes. Join as a volunteer and become a hero for animals
+                                who need you most!
+                            </p>
+                            <a href="#" class="btn btn-outline-warning btn-lg mt-3">Read Mode</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        </div>
+        </div>
+    </section>
 
-<!-- Contact Form Section -->
-<section id="Contact" class="py-5 " style="background-image: url('pets/dog.jpg'); background-size: cover; background-position: center; background-attachment:local;">
-    <div class="container-lg">
-        <h2 class="display-6 fw-bold text-warning text-center" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">Get in Touch</h2>
-        <div class="row justify-content-center my-5">
-            <div class="col-lg-6">
-                <form>
-                    <label for="email" class="form-label">Email address:</label>
-                    <div class="mb-3 input-group">
-                        <span class="input-group-text">
-                            <i class="bi bi-envelope-fill"></i>
-                        </span>
-                        <input type="email" class="form-control" id="email" placeholder="e.g. mario@gmail.com">
-                    </div>
 
-                    <label for="name" class="form-label">Name:</label>
-                    <div class="mb-3 input-group">
-                        <span class="input-group-text">
-                            <i class="bi bi-person-fill"></i>
-                        </span>
-                        <input type="text" class="form-control" id="name" placeholder="e.g. Mario">
-                    </div>
-
-                    <label for="subject" class="form-label">What is your question about?</label>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="bi bi-chat-right-dots-fill"></i>
-                        </span>
-                        <select id="subject" class="form-select">
-                            <option value="adopt">Adopting a pet Query</option>
-                            <option value="volunteer">Volunteer Query</option>
-                            <option value="other">Other Query</option>
-                        </select>
-                    </div>
-
-                    <div class="form-floating mb-4 mt-4">
-                        <textarea id="query" class="form-control" style="height: 140px;"></textarea>
-                        <label for="query">Your query...</label>
-                    </div>
-
-                    <div class="mb-4 text-center">
-                        <button type="submit" class="btn btn-outline-warning">Submit</button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Newsletter Signup -->
-            <div class="container p-3">
-                <div class="text-center">
-                    <h2 class="display-6 fw-bold text-warning text-center" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">Sign up for our newsletter</h2>
-                    <p class="lead">Sign up today and be part of Pet House!</p>
+    <!--About us Section-->
+    <section id="About-Us" class="p-5" style="background-color: rgba(249, 213, 158, 0.9);">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="pets/10082989.png" class="img-fluid" alt="image2">
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-8 text-center">
-                        <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#reg-modal">
-                            Register for Updates
+                <div class="col-md p-5">
+                    <h2 class="display-6 fw-bold text-warning" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">
+                        About Us</h2>
+                    <p class="lead">
+                        Give Love, Save Lives — Adopt, Volunteer, Support!</p>
+                    <p>
+                        This animal shelter, located in Iași, Romania, has been providing care and hope for homeless
+                        pets since its opening in 2019. With over 400 animals currently under its protection, the
+                        shelter is dedicated to providing food, medical care, and a safe environment for those in need.
+                        Remarkably, it has already helped 1,250 pets find loving homes. The shelter’s mission is to care
+                        for and rehabilitate stray animals, giving them a chance at a better life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Happy Tails-->
+
+    <section id="Happy-Tails" class="p-5 bg-dark">
+        <div class="container px-3">
+            <div class="title">
+                <div class="title bg-dark ">
+                    <h2 class="display-6 fw-bold text-warning" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">
+                        Happy Tails</h2>
+                    <p class="lead text-center text-white m-5">Many families have opened their hearts to shelter
+                        animals, giving them a chance at a better life. These pets, once homeless, now thrive in loving
+                        homes, bringing joy and companionship to their new families. The families are overjoyed to have
+                        made a difference, knowing they saved not just lives but also gained loyal friends for life.
+                    </p>
+                </div>
+            </div>
+            <div class="Happy">
+                <div class="tails">
+                    <div class="animals bg-warning ">
+                        <div class="name text-center">
+                            <h3>Rex</h3>
+                            <p>When Rex first arrived at his new home, he timidly explored every corner, but within a
+                                week, his tail never stopped wagging. Now he’s the family’s protector, children’s best
+                                friend, and a loyal companion on every walk.</p>
+                        </div>
+                    </div>
+                    <div class="animals bg-warning">
+                        <div class="name text-center">
+                            <h3>Pufarina</h3>
+                            <p>Tiny Pufurina, once scared and skinny, quickly blossomed into the fluffy queen of the
+                                house. Every morning, she greets her owners with gentle purring, a daily reminder of the
+                                magic of love.</p>
+                        </div>
+                    </div>
+                    <div class="animals bg-warning">
+                        <div class="name  text-center">
+                            <h3>Tom & Layla</h3>
+                            <p>Layla and Tom became friends at the shelter and were adopted together. Now inseparable,
+                                the dog guards the home while the cat warms the family with cozy purrs on the couch.</p>
+                        </div>
+                    </div>
+                    <div class="animals bg-warning">
+                        <div class="name  text-center">
+                            <h3>Reno</h3>
+                            <p>Reno joined a young couple and instantly became their best friend. His playful
+                                personality and funny jumps filled their home with laughter and joy.</p>
+                        </div>
+                    </div>
+                    <div class="animals bg-warning">
+                        <div class="name text-center">
+                            <h3>Pupic</h3>
+                            <p>Little Pupic, rescued from the streets, transformed into a lively comedian in his new
+                                home. He brightens every day with joyful leaps on walks and his ability to turn anything
+                                into a game.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="FAQ" class="p-5" style="background-color: rgba(249, 213, 158, 0.9);">
+        <div class="container">
+            <h2 class="display-6 fw-bold text-warning text-center mb-5"
+                style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">FAQs</h2>
+            <div class="accordion accordion-flush" id="FAQ">
+                <!-- Question 1 -->
+                <div class="accordion-item" style="background-color: transparent;">
+                    <h2 class="accordion-header" id="question-one">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-1" aria-expanded="true" aria-controls="question-1"
+                            style="background-color: transparent; border:1px; font-weight: bold;">
+                            How Can I Adopt a Pet?
                         </button>
+                    </h2>
+                    <div id="question-1" class="accordion-collapse collapse" aria-labelledby="question-one"
+                        data-bs-parent="#FAQ">
+                        <div class="accordion-body">
+                            <p>To adopt a pet you see listed on Pet House, please click the "Adopt" button or the
+                                "Contact this Organization" button on the pet's profile. You will then be given the
+                                group's contact information and, if an email is available for that group, you will be
+                                able to email that group using our form.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item" style="background-color: transparent;">
+                    <h2 class="accordion-header" id="question-two">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-2" aria-expanded="true" aria-controls="question-2"
+                            style="background-color: transparent; border:1px; font-weight: bold;">
+                            How is the work of Pet House funded?
+                        </button>
+                    </h2>
+                    <div id="question-2" class="accordion-collapse collapse" aria-labelledby="question-two"
+                        data-bs-parent="#FAQ">
+                        <div class="accordion-body">
+                            <p>Pet House Animal Society is funded mostly by the donations of members and well-wishers.
+                                We also receive some funding from foundations and businesses. Donations to Pet House are
+                                tax-deductible. Our accounts are fully audited.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item" style="background-color: transparent;">
+                    <h2 class="accordion-header" id="question-three">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-3" aria-expanded="true" aria-controls="question-3"
+                            style="background-color: transparent; border:1px; font-weight: bold;">
+                            Where do the animals come from?
+                        </button>
+                    </h2>
+                    <div id="question-3" class="accordion-collapse collapse" aria-labelledby="question-three"
+                        data-bs-parent="#FAQ">
+                        <div class="accordion-body">
+                            <p>Most of the animals come from Pet House Network partners, which are located all around
+                                the country.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="accordion-item" style="background-color: transparent;">
+                    <h2 class="accordion-header" id="question-four">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-4" aria-expanded="true" aria-controls="question-4"
+                            style="background-color: transparent; border:1px; font-weight: bold;">
+                            Where is the Pet House?
+                        </button>
+                    </h2>
+                    <div id="question-4" class="accordion-collapse collapse" aria-labelledby="question-four"
+                        data-bs-parent="#FAQ">
+                        <div class="accordion-body">
+                            <p>The animal shelter Pet House is located in Iași, Romania. It has been providing care and
+                                hope for homeless pets since its opening in 2019.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="accordion-item" style="background-color: transparent;">
+                    <h2 class="accordion-header" id="question-five">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-5" aria-expanded="true" aria-controls="question-5"
+                            style="background-color: transparent; border:1px; font-weight: bold;">
+                            How we use the money you donate us?
+                        </button>
+                    </h2>
+                    <div id="question-5" class="accordion-collapse collapse" aria-labelledby="question-five"
+                        data-bs-parent="#FAQ">
+                        <div class="accordion-body">
+                            <p>We couldn't fund our life-saving work for animals without you. More than 80 percent of
+                                your donation will go to rescuing and caring for vulnerable animals, then rehoming or
+                                releasing them. The next 18 percent of your donation goes towards fundraising. The
+                                remaining 2 percent goes towards governance. Your generous donation helps us fight
+                                animal cruelty—thank you.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Modal for Newsletter -->
-<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+    <!-- Contact Form Section -->
+    <section id="Contact" class="py-5 "
+        style="background-image: url('pets/dog.jpg'); background-size: cover; background-position: center; background-attachment:local;">
+        <div class="container-lg">
+            <h2 class="display-6 fw-bold text-warning text-center" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">
+                Get in Touch</h2>
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6">
+                    <form>
+                        <label for="email" class="form-label">Email address:</label>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <input type="email" class="form-control" id="email" placeholder="e.g. mario@gmail.com">
+                        </div>
+
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name" placeholder="e.g. Mario">
+                        </div>
+
+                        <label for="subject" class="form-label">What is your question about?</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots-fill"></i>
+                            </span>
+                            <select id="subject" class="form-select">
+                                <option value="adopt">Adopting a pet Query</option>
+                                <option value="volunteer">Volunteer Query</option>
+                                <option value="other">Other Query</option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-4 mt-4">
+                            <textarea id="query" class="form-control" style="height: 140px;"></textarea>
+                            <label for="query">Your query...</label>
+                        </div>
+
+                        <div class="mb-4 text-center">
+                            <button type="submit" class="btn btn-outline-warning">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="container p-3">
+                    <div class="text-center">
+                        <h2 class="display-6 fw-bold text-warning text-center"
+                            style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);">Sign up for our newsletter</h2>
+                        <p class="lead">Sign up today and be part of Pet House!</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                                Register for Updates
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>Join over 250,000 pet lovers all around Romania and sign up for our newsletter. We'll send you emails packed with information about our work, products, services, ways to support us, and updates about our pets.</p>
-                <label for="modal-email" class="form-label">Your email address:</label>
-                <input type="email" class="form-control" id="modal-email" placeholder="e.g. mario@gmail.com">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary">Submit</button>
+        </div>
+    </section>
+
+    <!-- Modal for Newsletter -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Join over 250,000 pet lovers all around Romania and sign up for our newsletter. We'll send you
+                        emails packed with information about our work, products, services, ways to support us, and
+                        updates about our pets.</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g. mario@gmail.com">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary">Submit</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--Footer-->
-<section class="bg-dark position-relative">
-<div class="container py-2">
-    <footer class="bg-dark text-center text-lg-start text-white">
-      <div class="container p-4">
-        <a href="#" class="position-absolute bottom-0 end-0 p-5" style="color: rgb(207, 170, 23);">
-            <i class="bi bi-arrow-up-circle h1"></i>
-        </a>
+    <!--Footer-->
+    <section class="bg-dark position-relative">
+        <div class="container py-2">
+            <footer class="bg-dark text-center text-lg-start text-white">
+                <div class="container p-4">
+                    <a href="#" class="position-absolute bottom-0 end-0 p-5" style="color: rgb(207, 170, 23);">
+                        <i class="bi bi-arrow-up-circle h1"></i>
+                    </a>
 
-        <div class="row my-4">
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-         <div class="rounded-circle bg-dark shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 50px; height: 50px;">
-              <img src="pets/logo.png" height="60" alt=""
-                   loading="lazy" />
-            </div>
-            <h5 class="text-center ">Pet House</h5>
-            <p class="text-center"> Homeless animal shelter.</p>
-           
-            <ul class="list-unstyled d-flex flex-row justify-content-center">
-              <li>
-                <a class="text-white px-2" href="#!">
-                 <i class="bi bi-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a class="text-white px-2" href="#!">
-                    <i class="bi bi-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a class="text-white ps-2" href="#!">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4">Programs & Services</h5>
-  
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="#!" class="text-white"></i>Adopt a dog</a>
-              </li>
-              <li class="mb-2">
-                <a href="#!" class="text-white"></i>Adopt a cat</a>
-              </li>
-              <li class="mb-2">
-                <a href="#!" class="text-white"></i>Volunteer activities</a>
-              </li>
-              <li class="mb-2">
-                <a href="#!" class="text-white"></i>Job</a>
-              </li>
-            </ul>
-          </div>
+                    <div class="row my-4">
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <div class="rounded-circle bg-dark shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                                style="width: 50px; height: 50px;">
+                                <img src="pets/logo.png" height="60" alt="" loading="lazy" />
+                            </div>
+                            <h5 class="text-center ">Pet House</h5>
+                            <p class="text-center"> Homeless animal shelter.</p>
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4">Useful links</h5>
-  
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="#About-Us" class="text-white"></i>About the shelter</a>
-              </li>
-              <li class="mb-2">
-                <a href="#FAQ" class="text-white"></i>FAQs</a>
-              </li>
-              <li class="mb-2">
-                <a href="#Happy-Tails" class="text-white"></i>Happy Tails</a>
-              </li>
-              <li class="mb-2">
-                <a href="#Contact" class="text-white"></i>Contact</a>
-              </li>
-            </ul>
-          </div>
+                            <ul class="list-unstyled d-flex flex-row justify-content-center">
+                                <li>
+                                    <a class="text-white px-2" href="#!">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-white px-2" href="#!">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-white ps-2" href="#!">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4">Contact</h5>
-            <ul class="list-unstyled">
-              <li>
-                <p><i class="bi bi-house-door"></i>
-                    Iași, 57 Street, Romania</p>
-              </li>
-              <li>
-                <p><i class="bi bi-telephone"></i> +40 234 567 89</p>
-              </li>
-              <li>
-                <p><i class="bi bi-envelope"></i> pethouse@gmail.com</p>
-              </li>
-            </ul>
-          </div>
-        </div>  
-      </div>
-      <div class="text-center p-3">
-        © 2024 Copyright:
-        <a class="text-white" href="#">pethouse.com</a>
-      </div>
-    </footer>
-  
-  </div>
-</section>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase mb-4">Programs & Services</h5>
+
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <a href="#!" class="text-white"></i>Adopt a dog</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#!" class="text-white"></i>Adopt a cat</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#!" class="text-white"></i>Volunteer activities</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#!" class="text-white"></i>Job</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase mb-4">Useful links</h5>
+
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <a href="#About-Us" class="text-white"></i>About the shelter</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#FAQ" class="text-white"></i>FAQs</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#Happy-Tails" class="text-white"></i>Happy Tails</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#Contact" class="text-white"></i>Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase mb-4">Contact</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p><i class="bi bi-house-door"></i>
+                                        Iași, 57 Street, Romania</p>
+                                </li>
+                                <li>
+                                    <p><i class="bi bi-telephone"></i> +40 234 567 89</p>
+                                </li>
+                                <li>
+                                    <p><i class="bi bi-envelope"></i> pethouse@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center p-3">
+                    © 2024 Copyright:
+                    <a class="text-white" href="#">pethouse.com</a>
+                </div>
+            </footer>
+
+        </div>
+    </section>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>
