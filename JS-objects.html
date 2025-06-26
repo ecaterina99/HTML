@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello JS</title>
+</head>
+
+<body>
+ <script type="text/javascript">
+
+// Crearea obiectului prin folosirea obiectului literal
+    
+
+    var car = {make:"Subary", model:"Legacy", weight:1560, color:"black"};
+    console.log(car.model);
+
+
+
+    //Crearea obiectului prin folosirea cuvântului-cheie new
+var car = new Object();
+car.make = "Subary";
+car.model = "Legacy";
+car.weight = 1560;
+car.color = "black";
+
+    console.log(car.model);
+
+
+
+//Crearea obiectului prin folosirea constructorului obiect
+
+var Car = function(make, model, weight, color) {
+ this.make = make;
+ this.model = model;
+ this.weight = weight;
+ this.color = color;
+
+ this.startEngine = function(){
+  return "Engine of " + this.make + " " + this.model + " is started.";
+ };
+}
+ 
+var car1 = new Car("Subary", "Legacy", 1563, "black");
+console.log(car1);
+console.log(car1.startEngine());
+
+//prototype
+var Person = function(firstname, lastname, age){
+ this.firstname = firstname;
+ this.lastname = lastname;
+ this.age = age;
+}
+ 
+Person.prototype.info = function(){
+ return this.firstname + " " + this.lastname;
+}
+ 
+var Student = function(firstname, lastname, age, university) {
+ Person.call(this, firstname, lastname, age);
+ this.university = university;
+}
+ 
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+ 
+Student.prototype.info = function(){
+ return this.firstname + " " + this.lastname + ", from University " + this.university;
+}
+var student1 = new Student("Ben", "Clock", 22, "Link");
+console.log(student1.info());
+
+
+</script>
+</body>
+</html>
