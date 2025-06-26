@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello JS</title>
+</head>
+
+<body>
+
+     <script type="text/javascript">
+        try {
+ alert("Value of variable b is : " + b );
+}
+catch(err) {
+ console.log('Error name: ' + err.name);
+ console.log('Error message: ' + err.message);
+}
+
+
+try {
+ alert("Value of variable b is : " + b );
+}
+catch(err) {
+ console.log('Error name: ' + err.name);
+ console.log('Error message: ' + err.message);
+}
+finally{
+console.log('This message will always be shown');
+}
+
+var x = 5;
+var y = 0;
+var z;
+ 
+try {
+ 
+ if(y == 0)
+ {
+  var e = new Error('Division by zero is not allowed');
+  e.name = 'Invalid division';
+  throw e;
+     
+ }else{
+  z = x / y;
+ }  
+}
+catch(err) {
+ console.log('Error name: ' + err.name);
+ console.log('Error message: ' + err.message);
+}
+
+
+var x = 5;
+ 
+try {
+ 
+ if(!(x > 5 && x < 10))
+ {
+  throw {
+   err_name: "Out of range", 
+   reason: "Value must be greater than 5 and less than 10"
+  }
+ }  
+}
+catch(err) {
+ console.log('Error name: ' + err.err_name);
+ console.log('Error message: ' + err.reason);
+}
+        </script>
+</body>
+</html>
