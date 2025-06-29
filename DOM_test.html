@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Tree</title>
+
+    <style type="text/css">
+ .blue-text{
+  color: blue;
+ }
+</style>
+</head>
+
+<body>
+
+     <div id="div_1">
+  <p id="p_1">Text 1</p>
+  <p id="p_2">Text 2</p>
+  <p id="p_3">Text 3</p>
+  <p class="some_class">Text 4</p>
+    <p class="some_class">Text 5</p>
+ </div>
+
+
+  <ul id="myList">
+  <li>Item 1</li>
+  <li id="myId">Item 2</li>
+  <li>Item 3</li>
+ </ul>
+
+ <input type="text" name="firstname" id="first-name" value="I want to be button!">
+
+
+ <script type="text/javascript">
+document.write("<h1>Hello</h1>");
+var paragraf_1  = document.getElementById('p_2');
+paragraf_1.style.color="blue";
+
+  var paragraphs = document.getElementsByClassName('some_class');
+  console.log(paragraphs.length);
+
+
+  for(var i = 0; i< paragraphs.length; i++){
+    paragraphs[i].style.color="red";
+  }
+
+
+  var items = document.getElementsByTagName("li");
+    for(var i = 0; i< items.length; i++){
+    items[i].style.color="green";
+  }
+
+
+  var item = document.querySelector("ul li");
+  item.style.color="pink"
+
+  var allItems = document.querySelectorAll("ul li");
+
+    for(var i = 0; i< allItems.length; i++){
+    allItems[i].style.fontWeight ="bold";
+  }
+
+
+   var paragraph = document.getElementById('p_1');
+  //reading innerHTML
+  console.log("Original paragraph content was: " + paragraph.innerHTML);
+   console.log("Id: " + paragraph.id);
+  console.log("Class: " + paragraph.className);
+  //writing innerHTML
+  paragraph.innerHTML = "New text set using innerHTML property";
+
+
+   var input = document.getElementById('first-name');
+  input.setAttribute('type', 'button');
+
+var paragraf_3 = document.getElementById("p_3");
+paragraf_3.classList.add("blue-text")
+
+
+var newParagraph = document.createElement("p");
+
+var newContent = document.createTextNode("This is dynamically generated paragraph!");
+newParagraph.appendChild(newContent);
+document.body.appendChild(newParagraph);
+
+ var list = document.getElementById("myList");
+  list.removeChild(list.children[1]);
+
+
+  newParagraph.appendChild(newContent);
+ 
+  var oldParagraph = document.getElementById("p_3");
+  document.body.replaceChild(newParagraph, oldParagraph);
+
+</script>
+</body>
+</html>
