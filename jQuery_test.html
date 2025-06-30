@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Tree</title>
+
+    <style type="text/css">
+       </style>
+
+       <script type="text/javascript" src="jquery-3.7.1.js"></script>
+
+</head>
+
+<body>
+
+<h1>This is heading</h1>
+<h2>This is second heading</h2>
+<p id = "p_1">This is paragraph.</p>
+<p class = "some_class">This is another paragraph.</p>
+   
+
+<div id="contentContainer"></div>
+
+   <script type="text/javascript">
+      $("h1").css("color","blue");
+            $("#p_1").css("color","red");
+                        $(".some_class").css("color","green");
+
+   $(document).ready(function(){
+      $("h1").click(function () {
+         $(this).css("color","pink");
+    alert("The element was clicked.");
+});
+   })
+
+
+   $(document).ready(function(){
+      $("h2").on("click",function () {
+    alert("The element was clicked.");
+});
+   })
+
+
+   $(document).ready(function(){
+     
+    $.ajax({
+      url: "text.txt",
+      type: "GET",
+      dataType: "text",
+      success: function(result){
+         $("contentContainer").html(result);
+      }
+
+    });
+
+
+   })
+
+   </script>
+
+</body>
+</html>
