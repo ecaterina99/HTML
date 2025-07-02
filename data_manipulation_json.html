@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Tree</title>
+
+    <style type="text/css">
+       </style>
+</head>
+
+<body>
+
+    <h2>JS DEMO</h2>
+    <button type="button" id="getBtn">Get content</button>
+    <div id="contentContainer"></div> 
+
+<script type="text/javascript">
+   
+ window.onload = function () {
+   var button = document.getElementById("getBtn");
+ 
+   button.addEventListener("click", function () {
+ 
+    var xhttp = new XMLHttpRequest();
+ 
+    xhttp.onreadystatechange = function () {
+     if (xhttp.readyState == 4 && xhttp.status == 200) {
+ 
+      var jsonPerson = JSON.parse(xhttp.responseText);
+ 
+      console.log("Firstname: " + jsonPerson.firstName);
+      console.log("Lastname: " + jsonPerson.lastName);
+      console.log("Hair color: " + jsonPerson.hairColor);
+      console.log("Eye color: " + jsonPerson.eyeColor);
+     }
+    };
+    xhttp.open("GET", "data.js", true);
+    xhttp.send();
+ 
+   });
+ 
+  }
+
+</script>
+</body>
+</html>
